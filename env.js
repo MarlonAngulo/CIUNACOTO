@@ -7,5 +7,5 @@ if (fs.existsSync('./public')) {
 } else {
   process.env.NODE_ENV = 'development';
   process.env.databaseUri = 'mongodb://estandar:programacion@ds157723.mlab.com:57723/ciunacoto';
-  process.env.databaseName = 'development database: mean-angular-2'; // Database name
+  process.env.databaseName = 'development database: mean-angular-2'; // Database name__
 }
