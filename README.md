@@ -53,7 +53,7 @@ $ npm start
 
 ## Contributors
 
-David Acosta.
+Marlon Angulo Segura, Milton, Jeiko, Yordan, Juan
 
 ## License
 
