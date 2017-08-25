@@ -9,6 +9,10 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  username = '';
+  email = '';
+  usertype = '';
+  usertypedesc = '';
 
   constructor(
     public authService: AuthService,
@@ -24,6 +28,29 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Once component loads, get user's data to display on profile
+  this.authService.getProfile().subscribe(profile => {
+    this.username = profile.user.username; // Set username
+    this.email = profile.user.email; // Set e-mail
+    this.usertype = profile.user.userType; // Set user type
+    switch(this.usertype) {
+       case "1": {
+          //statements;
+          this.usertypedesc = "Adm"; // Set user type description to "Administrador"
+          break;
+       }
+       case "2": {
+          //statements;
+          this.usertypedesc = "Usr"; // Set user type description to "Usuario"
+          break;
+       }
+       default: {
+          //statements;
+          this.usertypedesc = "?"; // Set user type description to "?"
+          break;
+       }
+    }
+  });
   }
 
 }
