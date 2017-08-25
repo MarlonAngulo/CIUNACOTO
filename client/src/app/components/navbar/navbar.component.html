@@ -19,6 +19,7 @@
         <li><a *ngIf="authService.loggedIn()" routerLink="/profile">Perfil</a></li>
         <li><a *ngIf="authService.loggedIn()" routerLink="/blog">Blog</a></li>
         <li><a *ngIf="!authService.loggedIn()" routerLink="/login">Login</a></li>
+        <li><a *ngIf="userType=='1'" routerLink="/users">Usuarios</a></li>
         <li><a *ngIf="authService.loggedIn()" href="#" (click)="onLogoutClick()">Salir</a></li>
         <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/register">Register</a></li>
       </ul>

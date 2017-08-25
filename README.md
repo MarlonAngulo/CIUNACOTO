@@ -53,7 +53,11 @@ $ npm start
 
 ## Contributors
 
+<<<<<<< HEAD
 Marlon Angulo Segura, Milton Gómez Pérez, Jeiko, Jordan Jimenez López. , Juan
+=======
+Marlon Angulo Segura, Milton, Jeiko, Yordan, Juan
+>>>>>>> bd627587cb9418f695fa76ed510f73e7f3b2874e
 
 ## License
 
