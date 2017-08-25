@@ -133,7 +133,6 @@ const passwordValidators = [
 const userSchema = new Schema({
   email: { type: String, required: true, unique: true, lowercase: true, validate: emailValidators },
   username: { type: String, required: true, unique: true, lowercase: true, validate: usernameValidators },
-  usertype: { type: String, required: true, unique: false, lowercase: true, default : '2'},
   password: { type: String, required: true, validate: passwordValidators }
 });
 
