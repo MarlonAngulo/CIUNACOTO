@@ -10,8 +10,7 @@ export class ProfileComponent implements OnInit {
 
   username = '';
   email = '';
-  usertype = '';
-  usertypedesc = '';
+  tipo = 'Administrador';
 
   constructor(
     private authService: AuthService
@@ -20,26 +19,8 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     // Once component loads, get user's data to display on profile
     this.authService.getProfile().subscribe(profile => {
-    this.username = profile.user.username; // Set username
-    this.email = profile.user.email; // Set e-mail
-    this.usertype = profile.user.userType; // Set user type
-    switch(this.usertype) {
-         case "1": {
-            //statements;
-            this.usertypedesc = "Administrador"; // Set user type description to "Administrador"
-            break;
-         }
-         case "2": {
-            //statements;
-            this.usertypedesc = "Usuario"; // Set user type description to "Usuario"
-            break;
-         }
-         default: {
-            //statements;
-            this.usertypedesc = "?"; // Set user type description to "?"
-            break;
-         }
-      }
+      this.username = profile.user.username; // Set username
+      this.email = profile.user.email; // Set e-mail
     });
   }
 
