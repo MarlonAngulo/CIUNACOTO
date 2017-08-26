@@ -53,7 +53,7 @@ $ npm start
 
 ## Contributors
 
-Marlon Angulo Segura, Milton Gómez Pérez, Jeiko, Jordan Jimenez L. , Juan
+Marlon Angulo Segura, Milton Gómez Pérez, Jeiko, Jordan Jiménez López. , Juan
 
 ## License
 
