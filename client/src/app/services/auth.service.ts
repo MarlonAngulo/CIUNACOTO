@@ -75,6 +75,29 @@ export class AuthService {
     return this.http.get(this.domain + 'authentication/profile', this.options).map(res => res.json());
   }
 
+  // Function to get all users from the database
+  getAllUsers() {
+    this.createAuthenticationHeaders(); // Create headers
+    return this.http.get(this.domain + 'authentication/allUsers', this.options).map(res => res.json());
+  }
+
+  getSingleUser(id) {
+    this.createAuthenticationHeaders(); // Create headers
+    return this.http.get(this.domain + 'authentication/singleUser/' + id, this.options).map(res => res.json());
+  }
+
+  // Function to edit/update user
+  editUser(user) {
+    this.createAuthenticationHeaders(); // Create headers
+    return this.http.put(this.domain + 'authentication/updateUser/', user, this.options).map(res => res.json());
+  }
+
+  // Function to delete a user
+  deleteUser(id) {
+    this.createAuthenticationHeaders(); // Create headers
+    return this.http.delete(this.domain + 'users/deleteUser/' + id, this.options).map(res => res.json());
+  }
+
   // Function to get public profile data
   getPublicProfile(username) {
     this.createAuthenticationHeaders(); // Create headers before sending to API
@@ -84,6 +107,18 @@ export class AuthService {
   // Function to check if user is logged in
   loggedIn() {
     return tokenNotExpired();
+  }
+
+  // Function to post a comment on a blog post
+  postComment(id, comment) {
+    this.createAuthenticationHeaders(); // Create headers
+    // Create blogData to pass to backend
+    const userData = {
+      id: id,
+      comment: comment
+    }
+    return this.http.post(this.domain + 'users/comment', userData, this.options).map(res => res.json());
+
   }
 
 }

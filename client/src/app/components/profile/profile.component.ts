@@ -10,6 +10,7 @@ export class ProfileComponent implements OnInit {
 
   username = '';
   email = '';
+  tipo = 'Administrador';
 
   constructor(
     private authService: AuthService
