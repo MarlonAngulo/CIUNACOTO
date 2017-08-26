@@ -9,6 +9,9 @@ import { PublicProfileComponent } from './components/public-profile/public-profi
 import { BlogComponent } from './components/blog/blog.component';
 import { EditBlogComponent } from './components/blog/edit-blog/edit-blog.component';
 import { DeleteBlogComponent } from './components/blog/delete-blog/delete-blog.component';
+import { ItemComponent } from './components/item/item.component';
+import { EditItemComponent } from './components/item/edit-item/edit-item.component';
+import { DeleteItemComponent } from './components/item/delete-item/delete-item.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NotAuthGuard } from './guards/notAuth.guard';
 
@@ -51,6 +54,21 @@ const appRoutes: Routes = [
   {
     path: 'delete-blog/:id',
     component: DeleteBlogComponent, // Delete Blog Route
+    canActivate: [AuthGuard] // User must be logged in to view this route
+  },
+  {
+    path: 'item',
+    component: ItemComponent, // Item Route,
+    canActivate: [AuthGuard] // User must be logged in to view this route
+  },
+  {
+    path: 'edit-item/:id',
+    component: EditItemComponent, // Edit Item Route
+    canActivate: [AuthGuard] // User must be logged in to view this route
+  },
+  {
+    path: 'delete-item/:id',
+    component: DeleteItemComponent, // Delete Item Route
     canActivate: [AuthGuard] // User must be logged in to view this route
   },
   {

@@ -9,17 +9,18 @@
 </div>
 
 <div class="row">
+  <a *ngIf="authService.loggedIn()" routerLink="/item">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
       <img src="https://image.flaticon.com/icons/svg/417/417745.svg" alt="placeholder image" width="140" height="140">
       <div class="caption">
         <h3>Mantenimiento</h3>
-        <button type="button">INGRESAR</button>
 
         <!--<p>MongoDB is a free and open-source cross-platform document-oriented database program. This NoSQL database program uses JSON-like documents with schemas.</p>-->
       </div>
     </div>
   </div>
+  </a>
 
   <div class="col-sm-6 col-md-4">
     <div class=thumbnail> <img src="https://image.flaticon.com/icons/svg/417/417746.svg" alt="Generic placeholder image" width="140" height="140">
